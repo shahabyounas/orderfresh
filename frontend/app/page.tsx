@@ -62,21 +62,27 @@ export function MainCard() {
 }
 
 export default function Home() {
-  const text = "Find Global Fresh Markets Today";
+  const text = "Find Global Fresh Markets Here";
   return (
-    <Container
-      maxWidth="xl"
+    <Box
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         backgroundColor: "var(--primary-bg-color)",
         p: 10,
+        borderRadius: 1,
       }}
     >
       <Box
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-        fontSize="70px"
+        sx={{ 
+          display: "flex", 
+          alignItems: "center", 
+          justifyContent: "center",
+          boxShadow: 5,
+          borderRadius: 5,
+        }}
+        fontSize="60px"
         textAlign="center"
         maxWidth="sm"
         color="var(--text-color-100)"
@@ -85,6 +91,6 @@ export default function Home() {
       </Box>
 
       <MainCard />
-    </Container>
+    </Box>
   );
 }

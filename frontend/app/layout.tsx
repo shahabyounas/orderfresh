@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme'
 import Navbar from "./navbar";
 import "./globals.css";
+import './i18next'
 
 const inter = Inter({ subsets: ["latin"] });
 
