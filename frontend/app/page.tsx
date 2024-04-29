@@ -2,10 +2,9 @@
 import * as React from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Card from "@mui/material/Card";
 
-export function MainCard() {
+function MainCard() {
   return (
     <Box
       sx={{

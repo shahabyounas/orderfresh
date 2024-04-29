@@ -11,11 +11,16 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import LanguageSettings from './Settings'
+import { useLanguage } from './Settings/useLanguage'
+
 
 const pages = ["About", "Fresh", "Markets", "Blog"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { t } = useLanguage()
+
+  console.log(t('APP_TITLE'))
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -78,7 +83,7 @@ function ResponsiveAppBar() {
               fontWeight: 600,
             }}
           >
-            Order Fresh
+            {t('APP_TITLE')}
           </Typography>
 
           <Typography
@@ -93,7 +98,7 @@ function ResponsiveAppBar() {
               fontWeight: 600,
             }}
           >
-            Order Fresh
+            {t('APP_TITLE')}
           </Typography>
 
           <Box

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -6,45 +7,49 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Language } from "@mui/icons-material";
-import { APP_SUPPORTED_LANGUAGES } from "../constants";
+import { useLanguage } from "./useLanguage";
 
 export function LanguageSettings() {
-  const [{ isOpen }, setState] = React.useState({ isOpen: false });
-  const [language, setLanguage] = React.useState("en");
-  const languages = APP_SUPPORTED_LANGUAGES;
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const {
+    t,
+    language: currentLanguage,
+    languages,
+    changeLanguage,
+  } = useLanguage();
 
   function handleClose() {
-    setState(() => ({ isOpen: !isOpen }))
+    setIsOpen(false);
   }
 
-  function openLanguageSelection(){
-    setState(() => ({ isOpen: true}))
+  function openLanguageSelection() {
+    setIsOpen(true);
   }
 
-  function handleChangeLanguage(language){
-    setState(() => ({ isOpen: !isOpen }))
-    setLanguage(language)
+  function handleChangeLanguage(language) {
+    setIsOpen(false);
+    changeLanguage(language);
   }
 
   return (
     <>
       <IconButton onClick={openLanguageSelection} title="changeLang">
         <Language />
-        <Typography>{language}</Typography>
+        <Typography>{currentLanguage}</Typography>
       </IconButton>
       <Dialog onClose={handleClose} open={isOpen || false}>
-        <DialogTitle> Select your desired language </DialogTitle>
+        <DialogTitle> {t("CHANGE_LANGUAGE")} </DialogTitle>
         <DialogContent style={{ display: "flex", flexDirection: "column" }}>
           {Object.keys(languages).map((language) => (
             <Button
               color="inherit"
               key={language}
               style={{
-                fontWeight:
-                  "selected_language" === language ? "bold" : "normal",
+                fontWeight: currentLanguage === language ? "bold" : "normal",
               }}
               type="submit"
-              disabled={"selected_language" === language}
+              disabled={currentLanguage === language}
               onClick={() => handleChangeLanguage(language)}
             >
               {languages[language].nativeName}
