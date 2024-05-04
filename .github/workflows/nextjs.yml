@@ -76,11 +76,6 @@ jobs:
       - name: Build with Next.js
         run: |
           cd frontend && ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          name: output
-          path: .next/
 
   # Deployment job
   deploy:
