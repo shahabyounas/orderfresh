@@ -1,0 +1,1 @@
+"use strict";exports.id=696,exports.ids=[696],exports.modules={2409:s=>{s.exports=JSON.parse('{"APP_TITLE":"اطلب طازجًا","CHANGE_LANGUAGE":"تغيير لغة التطبيق"}')}};
