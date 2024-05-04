@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/orderfresh'
+    output: 'export',
 };
 
 export default nextConfig;
