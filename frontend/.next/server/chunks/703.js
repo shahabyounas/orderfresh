@@ -1,1 +1,0 @@
-"use strict";exports.id=703,exports.ids=[703],exports.modules={4703:e=>{e.exports=JSON.parse('{"APP_TITLE":"Order Fresh","CHANGE_LANGUAGE":"Change app language"}')}};
