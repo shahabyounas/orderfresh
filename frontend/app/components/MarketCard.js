@@ -8,7 +8,16 @@ import Button from '@mui/material/Button'
 function MarketCard(props){
     const { heading = '', title = '', description = ''  } = props
     return (
-        <Card sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345, height: 400 }}>
+        <Card 
+          sx={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              maxWidth: 345, 
+              height: 400, 
+              boxShadow: 3,
+              borderRadius: 4,
+              px: 1,
+            }}>
             <CardHeader>
                 {heading}
             </CardHeader>
