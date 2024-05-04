@@ -111,8 +111,9 @@ export default function Home() {
           padding: 2,
         }}
       > 
-        {new Array(12).fill(null).map(() => (
+        {new Array(12).fill(Number).map((e, _) => (
           <MarketCard
+            key={_.toString()}
             heading="Fresh Markets"
             title="Organic vegetables"
             description="Contrary to popular belief, Lorem Ipsum is not simply random text. 
