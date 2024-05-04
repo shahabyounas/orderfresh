@@ -78,7 +78,7 @@ jobs:
           cd frontend && ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: create out dir
         run: |
-          cd frontend && mkdir /.out
+          cd frontend && mkdir -p /.out
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
