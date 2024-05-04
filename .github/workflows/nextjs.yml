@@ -24,6 +24,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+ run:
+  working-directory: ./frontend
+
 jobs:
   # Build job
   build:
@@ -53,7 +57,6 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          working-directory: frontend
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -62,7 +65,6 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: next
-          working-directory: frontend
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -75,14 +77,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: frontend
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        working-directory: ./frontend
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./frontend/out
+          path: ./out
 
   # Deployment job
   deploy:
