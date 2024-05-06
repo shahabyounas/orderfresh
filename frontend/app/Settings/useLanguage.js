@@ -1,6 +1,6 @@
 'use client'
 import {  useTranslation } from 'next-i18next'
-import { APP_SUPPORTED_LANGUAGES } from '../constants';
+import { APP_SUPPORTED_LANGUAGES } from '../../constants';
 
 function useLanguage(){
     const { i18n, t: translation }  = useTranslation()

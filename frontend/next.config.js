@@ -1,4 +1,8 @@
 module.exports = {
-    output: 'export',
-    basePath: '/orderfresh/frontend'
+    i18n: {
+        locales: ['en-US', 'ur-PK', 'ar'],
+        defaultLocale: 'en-US',
+        locales: ['en', 'ar', 'ur'],
+        defaultLocale: 'en',
+    },
 }

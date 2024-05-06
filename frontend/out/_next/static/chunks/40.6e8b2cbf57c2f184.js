@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[40],{8040:function(e){e.exports=JSON.parse('{"APP_TITLE":"اطلب طازجًا","CHANGE_LANGUAGE":"تغيير لغة التطبيق"}')}}]);

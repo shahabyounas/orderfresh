@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import { AppRouterCacheProvider,  } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './theme'
-import Navbar from "./navbar";
 import "./globals.css";
 import './i18next'
 
@@ -19,12 +18,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+    // console.log(location)
   return (
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
         <ThemeProvider theme={theme}>
-          <Navbar />
           {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
