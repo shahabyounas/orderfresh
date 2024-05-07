@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import Link from 'next/link'
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -11,24 +12,49 @@ import Inventory from "@mui/icons-material/Inventory";
 import Park from "@mui/icons-material/Park";
 import ShowChart from "@mui/icons-material/ShowChart";
 import Storefront from "@mui/icons-material/Storefront";
+import Product from "@mui/icons-material/ProductionQuantityLimits";
+import Cloud from "@mui/icons-material/CloudQueue";
+import AdminIcon from "@mui/icons-material/AdminPanelSettings";
+import UserAccountMenu from '../UserAccountMenu'
+import { usePathname } from 'next/navigation'
 
 export default function NestedList() {
   const [open, setOpen] = React.useState(true);
+  const [activePath, setActivePath] = React.useState('')
+  const pathname = usePathname()
 
-  const iconColor = { color: 'var(--basecolor-gray-200)' }
+  const iconColor = { color: "var(--basecolor-gray-200)" };
 
   const menuList = [
     {
-      icon: <Storefront sx={iconColor}/>,
+      icon: <Storefront sx={iconColor} />,
       title: "Market",
+      path: '/market'
     },
     {
       icon: <ShowChart sx={iconColor} />,
       title: "Orders",
+      path: '/orders'
     },
     {
       icon: <Inventory sx={iconColor} />,
       title: "Inventory",
+      path: '/inventory'
+    },
+    {
+      icon: <Product sx={iconColor} />,
+      title: "Products",
+      path: '/products'
+    },
+    {
+      icon: <Cloud sx={iconColor} />,
+      title: "Data",
+      path: '/data'
+    },
+    {
+      icon: <AdminIcon sx={iconColor} />,
+      title: "Admin",
+      path: '/admin'
     },
   ];
 
@@ -64,15 +90,36 @@ export default function NestedList() {
     >
       {menuList.map((menu) => {
         return (
+          <Link href={menu.path} key={menu.path}>
           <ListItemButton>
             <ListItemIcon>{menu.icon}</ListItemIcon>
-            <ListItemText 
-                sx={{ fontWeight: "bold" }}
-                primary={<Typography color="var(--basecolor-gray-200)" fontWeight="600">{menu.title}</Typography>}
-              />
+            <ListItemText
+              sx={{ fontWeight: "bold" }}
+              primary={
+                <Typography color="var(--basecolor-gray-200)" fontWeight="600">
+                  {menu.title}
+                </Typography>
+              }
+            />
           </ListItemButton>
+          </Link>
         );
       })}
+      
+
+      <ListItemButton sx={{ position: "fixed", bottom: 20 }}>
+        <ListItemText
+          sx={{ fontWeight: "bold" }}
+          primary={
+            <Typography color="var(--basecolor-gray-200)" fontWeight="600">
+              Shahab Shahab
+            </Typography>
+          }
+        />
+      <UserAccountMenu />
+
+      </ListItemButton>
+
     </List>
   );
 }
