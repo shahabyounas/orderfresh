@@ -7,6 +7,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary-bg-color: #36c416cc;
+  --base-color-200: #eceef1ff;
+  --basecolor-gray-100: #d5dadfff;
+  --basecolor-gray-200: #5d6a85ff;
   --text-color-100: white;
   --bg-color-100: white;
   --bg-gradient: linear-gradient(90deg, hsla(109, 73%, 41%, 1) 92%, hsla(210, 81%, 22%, 1) 100%);
@@ -18,6 +21,9 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
     --primary-bg-color: #36c416cc;
+    --base-color-200: #eceef1ff;
+    --basecolor-gray-100: #d5dadfff;
+    --basecolor-gray-200: #5d6a85ff;
     --text-color-100: white;
     --bg-color-100: white;
     --bg-gradient: linear-gradient(90deg, hsla(109, 73%, 41%, 1) 92%, hsla(210, 81%, 22%, 1) 100%);

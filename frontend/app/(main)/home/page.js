@@ -1,9 +1,14 @@
-"use client";
+// "use client";
 import * as React from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import MarketCard from "../../../components/MarketCard";
+
+ async function getRepos(){
+  const res =  await fetch('https://api.github.com/users/shahabyounas/repos')
+  return res.json()
+}
 
 function MainCard() {
   return (
@@ -69,8 +74,10 @@ function MainCard() {
   );
 }
 
-export default function Home() {
+export default async function Home() {
   const text = "Find Global Fresh Markets Here";
+  const data = await getRepos()
+  console.log(data[0])
   return (
     <Box>
       <Box
