@@ -91,7 +91,7 @@ export default function NestedList() {
       {menuList.map((menu) => {
         return (
           <Link href={menu.path} key={menu.path}>
-          <ListItemButton>
+          <ListItemButton sx={{ backgroundColor: menu.path == pathname ? 'var(--basecolor-gray-100)' : '' }}>
             <ListItemIcon>{menu.icon}</ListItemIcon>
             <ListItemText
               sx={{ fontWeight: "bold" }}
